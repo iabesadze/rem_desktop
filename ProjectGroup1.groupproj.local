@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017.07.28 13:27:38.000.664,C:\Users\vm\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=C:\Users\vm\Documents\Embarcadero\Studio\Projects\rdp\ProjectGroup1.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Users\vm\Documents\Embarcadero\Studio\Projects\rdp\server.dproj"/>
+	</Default.Personality>
+</BorlandProject>

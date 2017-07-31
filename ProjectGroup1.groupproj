@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EBFE42B2-49E2-4C9E-86DE-34573E4522F8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="client.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="server.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\components\mstsc_active_x\asa.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="client">
+        <MSBuild Projects="client.dproj"/>
+    </Target>
+    <Target Name="client:Clean">
+        <MSBuild Projects="client.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="client:Make">
+        <MSBuild Projects="client.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="server">
+        <MSBuild Projects="server.dproj"/>
+    </Target>
+    <Target Name="server:Clean">
+        <MSBuild Projects="server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="server:Make">
+        <MSBuild Projects="server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="asa">
+        <MSBuild Projects="C:\components\mstsc_active_x\asa.dproj"/>
+    </Target>
+    <Target Name="asa:Clean">
+        <MSBuild Projects="C:\components\mstsc_active_x\asa.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="asa:Make">
+        <MSBuild Projects="C:\components\mstsc_active_x\asa.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="client;server;asa"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="client:Clean;server:Clean;asa:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="client:Make;server:Make;asa:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
